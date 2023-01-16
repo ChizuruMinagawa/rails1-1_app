@@ -1,4 +1,4 @@
-<h2>予定一覧</h2>
+<h2>スケジュール一覧</h2>
 <div classs = "new-schedule">
   <%= link_to("新規作成","/posts/new")%>
 </div>
@@ -25,8 +25,16 @@
         <td><%= post.title %></td>
         <td><%= post.start_date %></td>
         <td><%= post.end_date %></td>
-        <td><%= post.checkbox %></td>
-        <td><%= post.updated_at %></td>
+        <td>
+          <% if post.checkbox == true %>
+          ○
+          <% else post.checkbox == false %>
+          <% end %>
+        </td>
+        <td><%= post.updated_at.to_s(:datetime_jp) %></td>
+        <td><%= link_to "詳細", post %></td>
+        <td><%= link_to "編集", [:edit,post] %></td>
+        <td><%= link_to "削除", post, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
       </tr>
     <% end %>
   </tbody>
