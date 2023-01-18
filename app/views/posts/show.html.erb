@@ -7,11 +7,11 @@
     </tr>
     <tr>
       <th>開始日</th>
-      <td><%= @post.start_date %></td>
+      <td><%= @post.start_date.strftime("%Y/%m/%d") %></td>
     </tr>
     <tr>
       <th>終了日</th>
-      <td><%= @post.end_date %></td>
+      <td><%= @post.end_date.strftime("%Y/%m/%d") %></td>
     </tr>
     <tr>
       <th>終日</th>
@@ -28,8 +28,8 @@
     </tr>
   </table>
   <div>
-    <ul>
-      <li><%= link_to "← 一覧に戻る", :posts %></div></li>
-      <li><%= link_to "編集", "/posts/#{@post.id}/edit" %></div></li>
+    <ul class = "page-change">
+      <li><%= link_to "一覧に戻る", "/", class: "button" %></li>
+      <li><%= link_to "編集", "/posts/#{@post.id}/edit", class: "button" %></li>
     </ul>
   </div>

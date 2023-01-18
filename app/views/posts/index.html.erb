@@ -1,10 +1,12 @@
-<h2>スケジュール一覧</h2>
-<div classs = "new-schedule">
-  <%= link_to("新規作成","/posts/new")%>
+<div class = "head">
+  <div><h2>スケジュール一覧</h2></div>
+  <div>
+    <%= link_to "新規作成","/posts/new", class: "button" %>
+  </div>
 </div>
 
 <% if flash[:notice] %>
-   <p class="notice"><%= flash[:notice] %></p>
+  <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 
 <table>
@@ -16,6 +18,7 @@
       <th>終了日</th>
       <th>終日</th>
       <th>更新日時</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -23,8 +26,8 @@
       <tr>
         <td><%= post.id %></td>
         <td><%= post.title %></td>
-        <td><%= post.start_date %></td>
-        <td><%= post.end_date %></td>
+        <td><%= post.start_date.strftime("%Y/%m/%d") %></td>
+        <td><%= post.end_date.strftime("%Y/%m/%d") %></td>
         <td>
           <% if post.checkbox == true %>
           ○
@@ -32,10 +35,16 @@
           <% end %>
         </td>
         <td><%= post.updated_at.to_s(:datetime_jp) %></td>
-        <td><%= link_to "詳細", post %></td>
-        <td><%= link_to "編集", [:edit,post] %></td>
-        <td><%= link_to "削除", post, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+        <td>
+          <span><%= link_to "詳細", post %></span>
+          <span><%= link_to "編集", [:edit,post] %></span>
+          <span><%= link_to "削除", post, method: :delete, data: { confirm: "予定を削除しますか？" } %></span>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<div class = "sum-schedule">
+  <div>予定合計<span><%= @post %></span>件</div>
+  <div>本日の日付<%= Date.current.strftime('%Y/%m/%d') %></div>
+</div>
