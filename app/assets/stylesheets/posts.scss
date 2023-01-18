@@ -1,0 +1,75 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.app_title {
+  background-color: #fbc25b;
+  margin: 0;
+  padding: 10px;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  color: rgb(240, 50, 5);
+  padding: 5px 5px;
+  list-style-type: none;
+}
+
+table th {
+  background-color: #fbc25b;
+  padding: 10px 20px;
+}
+
+table td {
+  background-color: #f9ecd5;
+  padding: 10px 20px;
+}
+
+.notice {
+  background-color: #ccf;
+  padding: 5px;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.button {
+  font-size: 22px;
+  color: #ffa51d;
+  background-color: white;
+  border-color: #ffa51d;
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.sum-schedule {
+  font-size: 22px;
+  color: #ffa51d;
+  width: 250px;
+  height: 65px;
+  padding: 10px 20px;
+  border-width: 5px;
+  border-style: double;
+  border-radius: 10px;
+}
+
+.button:hover {
+  opacity: 0.7;
+}
+
+.page-change {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}

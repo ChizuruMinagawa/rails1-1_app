@@ -1,0 +1,35 @@
+<h2>スケジュール詳細</h2>
+
+  <table>
+    <tr>
+      <th>タイトル</th>
+      <td><%= @post.title %></td>
+    </tr>
+    <tr>
+      <th>開始日</th>
+      <td><%= @post.start_date.strftime("%Y/%m/%d") %></td>
+    </tr>
+    <tr>
+      <th>終了日</th>
+      <td><%= @post.end_date.strftime("%Y/%m/%d") %></td>
+    </tr>
+    <tr>
+      <th>終日</th>
+      <td>
+        <% if @post.checkbox == true %>
+        ○
+        <% else @post.checkbox == false %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th>メモ</th>
+      <td><%= @post.memo %></td>
+    </tr>
+  </table>
+  <div>
+    <ul class = "page-change">
+      <li><%= link_to "一覧に戻る", "/", class: "button" %></li>
+      <li><%= link_to "編集", "/posts/#{@post.id}/edit", class: "button" %></li>
+    </ul>
+  </div>
